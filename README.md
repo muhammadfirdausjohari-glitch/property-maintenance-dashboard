@@ -1,18 +1,47 @@
-# property-maintenance-dashboard
-AppSheet &amp; Looker Studio property maintenance database and dashboard pipeline.
 # Property Maintenance Database & Dashboard Pipeline
 
-## Problem Statement
+AppSheet & Looker Studio property maintenance database and dashboard pipeline.
+
+---
+
+## 📌 Problem Statement
 Field water meter readings and residential maintenance logs were recorded manually on paper. This led to data entry errors, delayed reporting, and a lack of real-time visibility into maintenance completion metrics.
 
-## Solution Architecture
-1. **Data Collection (AppSheet):** Mobile interface built for field staff to record readings, attaches photos, and auto-validates inputs.
+---
+
+## 🏗️ Solution Architecture
+1. **Data Collection (AppSheet):** Mobile interface built for field staff to record readings, attach photos, and auto-validate inputs.
 2. **Data Pipeline (Google Sheets / Supabase):** Asynchronous cloud sync to maintain structured database records.
 3. **Visualization (Looker Studio):** Interactive dashboard tracking maintenance completion rates, identifying unit bottlenecks, and surfacing usage trends.
 
-## Key Features & Results
-* Streamlined field reporting and eliminated paper-based data entry errors.
-* Provided management with real-time tracking of operational KPIs.
+---
 
-## Dashboards & Screenshots
-*(Upload your dashboard screenshots to this repo or add a view-only Looker Studio link here)*
+## 📱 AppSheet Mobile User Interface
+
+The mobile application provides custom field interfaces for logging maintenance complaints, recording water meter readings, and attaching technician reports.
+
+| Navigation Menu | Active Complaints List |
+| :---: | :---: |
+| ![App Navigation](Navigation.png) | ![Active Complaints](Active_complain.png) |
+
+| Water Meter Readings | Technician Reports & Attachments |
+| :---: | :---: |
+| ![Meter Readings](Meter_readings.png) | ![Technician Report](Tech_report.png) |
+
+---
+
+## ⚙️ Key AppSheet Functions & Logic
+
+```appsheet
+/* 1. Automated Reference Lookup for Linked Complaint ID */
+LOOKUP([_THISROW].[Related_Complaint_ID], "Active Complaint list", "COMPLAINT_ID", "UNIT_NO")
+
+/* 2. Dynamic Priority Formatting Rules */
+IFS(
+  [PRIORITY] = "High", "#FF0000",
+  [PRIORITY] = "Medium", "#FFA500",
+  [PRIORITY] = "Low", "#008000"
+)
+
+/* 3. Auto-Generated Timestamp on Completion */
+IF(ISNOTBLANK([COMPLETION_DATE]), NOW(), "")
