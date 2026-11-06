@@ -19,17 +19,17 @@ Field water meter readings and residential maintenance logs were recorded manual
 
 | Water Meter Readings | Technician Reports & Attachments |
 | :---: | :---: |
-| ![Meter Readings](Meter_readings.PNG) | ![Technician Report](Tech_report.PNG) |
+| ![Meter Readings](Water_meter_readings.jpg) | ![Technician Report](Tech_report_table.jpg) |
 
 ## Cloud Database Layer & Data Pipeline
 
 | Relational Complaint Log | Block Meter Consumption Table |
 | :---: | :---: |
-| ![Complaint Database](database_complaint.PNG) | ![Meter Readings Table](database_readings.PNG) |
+| ![Complaint Database](Complaint_table.jpg) | ![Meter Readings Table](Water_meter_readings.jpg) |
 
 ## Executive BI Dashboard (Looker Studio)
 
-![Looker Studio Dashboard](dashboard_looker.PNG)
+![Looker Studio Dashboard](Water_report_dashboard.jpg)
 
 ## AppSheet Meter Reading Formulas & Logic
 
