@@ -22,11 +22,11 @@ The mobile application provides custom field interfaces for logging maintenance 
 
 | Navigation Menu | Active Complaints List |
 | :---: | :---: |
-| ![App Navigation](Navigation.png) | ![Active Complaints](Active_complain.png) |
+| ![App Navigation](Navigation.PNG) | ![Active Complaints](Active_complain.PNG) |
 
 | Water Meter Readings | Technician Reports & Attachments |
 | :---: | :---: |
-| ![Meter Readings](Meter_readings.png) | ![Technician Report](Tech_report.png) |
+| ![Meter Readings](Meter_readings.PNG) | ![Technician Report](Tech_report.PNG) |
 
 ---
 
